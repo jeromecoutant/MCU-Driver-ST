@@ -1,0 +1,3 @@
+[submodule "MCU-Driver-HAL"]
+	path = MCU-Driver-HAL
+	url = git@github.com:MCU-Driver-HAL/MCU-Driver-HAL.git
