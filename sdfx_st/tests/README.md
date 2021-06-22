@@ -11,7 +11,7 @@ Each test can be built by doing the following:
 1. Clone the repository **recursively** to fetch both `MCU-Driver-HAL` and `MCU-Driver-HAL/tools/greentea-client`:
 
     ```
-    git clone --recursive git@github.com:ARMmbed/MCU-Driver-ST.git
+    git clone --recursive https://github.com/MCU-Driver-HAL/MCU-Driver-ST.git
     ```
 
 1. Change the current working directory to `MCU-Driver-ST/sdfx_st/tests/mbed_hal/<TEST>/`.
@@ -37,7 +37,7 @@ Outcome: The test compiles, links and produces artefacts.
 1. Use `mbedhtrun` to flash and run the test:
 
     ```
-    mbedhtrun -f ./sdfx_st/tests/mbed_hal/<TEST>/cmake_build/<TEST_BINARY_NAME>.bin -e MCU-Driver-HAL/tests/host_tests/ -d <TARGET_PLATFORM_MOUNT_POINT> -p <TARGET_PLATFORM_SERIAL_PORT>
+    mbedhtrun -f ./sdfx_st/tests/mbed_hal/<TEST>/cmake_build/<TEST_BINARY_NAME>.bin -e MCU-Driver-HAL/tests/host_tests/ -d <TARGET_PLATFORM_MOUNT_POINT> -p <TARGET_PLATFORM_SERIAL_PORT>:115200
     ```
 
     You can append multiple `-v` flags to `mbedhtrun` command to increase verbosity, i.e. `-vv`.
