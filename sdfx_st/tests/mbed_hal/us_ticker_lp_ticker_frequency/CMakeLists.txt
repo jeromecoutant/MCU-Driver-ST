@@ -10,18 +10,18 @@ include(${MBED_PATH}/tools/cmake/app.cmake)
 
 add_subdirectory(../../../.. ./MCU-Driver-ST)
 
-add_executable(sdfx-st-test-common_tickers)
+add_executable(sdfx-st-test-us_ticker_lp_ticker_frequency)
 
-mbed_configure_app_target(sdfx-st-test-common_tickers)
+mbed_configure_app_target(sdfx-st-test-us_ticker_lp_ticker_frequency)
 
-project(sdfx-st-test-common_tickers)
+project(sdfx-st-test-us_ticker_lp_ticker_frequency)
 
-target_link_libraries(sdfx-st-test-common_tickers
+target_link_libraries(sdfx-st-test-us_ticker_lp_ticker_frequency
     PRIVATE
-        sdfx-test-common_tickers
+        sdfx-test-us_ticker_lp_ticker_frequency
 )
 
-mbed_set_post_build(sdfx-st-test-common_tickers)
+mbed_set_post_build(sdfx-st-test-us_ticker_lp_ticker_frequency)
 
 option(VERBOSE_BUILD "Have a verbose build process")
 if(VERBOSE_BUILD)
