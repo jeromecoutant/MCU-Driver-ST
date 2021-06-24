@@ -81,4 +81,7 @@ The tool is not used in MCU-Driver-HAL but it can be useful for you.
 This repository contains STM32 families directories for STM32L475xG Part Number.
 
 
+## License and contributions
+
+The software is provided under the [Apache-2.0 license](LICENSE-apache-2.0.txt). All contributions to software and documents are licensed by contributors under the same license model as the software/document itself (ie. inbound == outbound licensing). The MCU-Driver-HAL project may reuse software already licensed under another license, provided the license is permissive in nature and compatible with Apache v2.0.
 
