@@ -9,7 +9,7 @@ Each example build instructions provides access to hardware specific source code
 Each application can be built by doing the following:
 1. Clone the repository recursively to get the `MCU-Driver-HAL` submodule:
     ```
-    git clone --recursive git@github.com:ARMmbed/MCU-Driver-ST.git
+    git clone --recursive https://github.com/MCU-Driver-HAL/MCU-Driver-ST
     ```
 1. Change the current working directory to `MCU-Driver-ST/sdfx_st/examples/<INTERFACE>/`
 1. Run:
@@ -25,7 +25,7 @@ Each application can be built by doing the following:
 Outcome: The application compiles, links and produces artefacts.
 
 # Program the artefact
-From the create `MCU-Driver-ST/sdfx_st/examples/<INTERFACE>/cmake_build/`, copy the binary to the device with the following command:
+From `MCU-Driver-ST/sdfx_st/examples/<INTERFACE>/cmake_build/`, copy the binary to the device with the following command:
 ```
 cp sdfx-stm-example-<INTERFACE>.bin <MOUNT_POINT_PATH>
 ```
