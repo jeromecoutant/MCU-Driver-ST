@@ -18,10 +18,10 @@ Each test can be built by doing the following:
 1. Generate the build system files:
 
     ```
-    cmake -S ./ -B cmake_build/ -DGREENTEA_CLIENT_STDIO=OFF -DMBED_TOOLCHAIN=<TOOLCHAIN> -DCMAKE_BUILD_TYPE=debug
+    cmake -S ./ -B cmake_build/ -GNinja -DGREENTEA_CLIENT_STDIO=OFF -DMBED_TOOLCHAIN=<TOOLCHAIN> -DCMAKE_BUILD_TYPE=debug
     ```
 
-    If you prefer to use the Ninja build system rather than the UNIX Makefiles, append `-G Ninja` to the command above.
+    If you prefer to use UNIX Makefiles rather than the Ninja build system, remove `-GNinja` from the command above.
 1. Build:
 
     ```
