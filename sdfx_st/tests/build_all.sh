@@ -17,6 +17,12 @@
 
 TESTS_BUILT=()
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  ncpu=$(( $(sysctl -n hw.ncpu) - 1))
+else
+  ncpu=$(( $(nproc) - 1 ))
+fi
+
 for TEST_PATH in $(find ./ -type f -name CMakeLists.txt); do
     TEST_DIR_PATH=$(dirname "$TEST_PATH")
     printf 'Building %s\n' "$TEST_DIR_PATH"
@@ -24,13 +30,12 @@ for TEST_PATH in $(find ./ -type f -name CMakeLists.txt); do
     cmake \
         -S ./ \
         -B ./cmake_build \
-        -G Ninja \
         -DGREENTEA_CLIENT_STDIO=OFF \
         -DMBED_TOOLCHAIN=GCC_ARM \
         -DCMAKE_BUILD_TYPE=develop \
         --log-level=ERROR \
         || exit
-    cmake --build ./cmake_build || exit
+    cmake --build ./cmake_build -j $ncpu || exit
     popd || exit
     TESTS_BUILT+=("$TEST_DIR_PATH")
 done
