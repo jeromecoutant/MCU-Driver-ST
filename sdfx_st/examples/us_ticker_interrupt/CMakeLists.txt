@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.19.0 FATAL_ERROR)
 
 set(MBED_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../MCU-Driver-HAL CACHE INTERNAL "")
 set(MBED_CONFIG_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../.mbedbuild CACHE INTERNAL "")
-set(APP_TARGET sdfx-st-hal-example-interrupt)
+set(APP_TARGET sdfx-st-hal-example-us_ticker_interrupt)
 
 include(${MBED_PATH}/tools/cmake/app.cmake)
 
@@ -19,7 +19,7 @@ project(${APP_TARGET})
 
 target_link_libraries(${APP_TARGET}
     PRIVATE
-        sdfx-hal-example-interrupt
+        sdfx-hal-example-us_ticker_interrupt
 )
 
 mbed_set_post_build(${APP_TARGET})
