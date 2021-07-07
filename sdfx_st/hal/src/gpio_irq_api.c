@@ -33,11 +33,11 @@
 #include <stdbool.h>
 #include <inttypes.h>
 #include "cmsis.h"
-#include "gpio_irq_api.h"
+#include "hal/gpio_api.h"
 #include "pinmap.h"
 #include "mbed_error.h"
 #include "gpio_irq_device.h"
-#include "platform/mbed_critical.h"
+#include "bootstrap/mbed_critical.h"
 
 #define EDGE_NONE (0)
 #define EDGE_RISE (1)

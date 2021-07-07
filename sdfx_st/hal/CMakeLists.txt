@@ -15,7 +15,7 @@ target_sources(sdfx-hal-st
         # src/analogout_api.c
         # src/can_api.c
         src/gpio_api.c
-        # gpio_irq_api.c
+        src/gpio_irq_api.c
         src/hal_tick_overrides.c
         # src/i2c_api.c
         # src/lp_ticker.c
