@@ -33,6 +33,7 @@
 
 #include "cmsis.h"
 #include "pinmap.h"
+#include "mbed_assert.h"
 #include "mbed_error.h"
 #include "PeripheralPins.h"
 #include "pwmout_device.h"

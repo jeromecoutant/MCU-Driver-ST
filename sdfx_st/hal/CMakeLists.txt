@@ -24,7 +24,7 @@ target_sources(sdfx-hal-st
         src/ospi_api.c
         src/pinmap.c
         # src/port_api.c
-        # src/pwmout_api.c
+        src/pwmout_api.c
         # src/qspi_api.c
         # src/reset_reason.c
         # src/rtc_api.c

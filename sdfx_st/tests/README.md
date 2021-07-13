@@ -18,7 +18,7 @@ Each test can be built by doing the following:
 1. Generate the build system files:
 
     ```
-    cmake -S ./ -B cmake_build/ -GNinja -DGREENTEA_CLIENT_STDIO=OFF -DMBED_TOOLCHAIN=<TOOLCHAIN> -DCMAKE_BUILD_TYPE=debug
+    cmake -S ./ -B cmake_build/ -DGREENTEA_CLIENT_STDIO=OFF -DMBED_TOOLCHAIN=<TOOLCHAIN> -DCMAKE_BUILD_TYPE=debug
     ```
 
     If you are using a non-default build system, and you have not set the environment variable, then you can append `-G<BuildSystem>` to the command above.
