@@ -29,6 +29,14 @@ Each test can be built by doing the following:
     cmake --build cmake_build/
     ```
 
+### Building all the tests at once
+
+You can build all the tests using the provided script: `build_all.sh`. If you want to use another build tool than the default used by cmake you can use the `CMAKE_GENERATOR` environment variable as follow:
+
+```sh
+CMAKE_GENERATOR=Ninja ./build_all.sh
+```
+
 Outcome: The test compiles, links and produces artefacts.
 
 ## Running the test
@@ -42,3 +50,4 @@ Outcome: The test compiles, links and produces artefacts.
     ```
 
     You can append multiple `-v` flags to `mbedhtrun` command to increase verbosity, i.e. `-vv`.
+
