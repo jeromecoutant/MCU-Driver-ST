@@ -19,7 +19,7 @@ target_sources(sdfx-hal-st
         src/hal_tick_overrides.c
         # src/i2c_api.c
         # src/lp_ticker.c
-        # src/mbed_crc_api.c
+        src/crc_api.c
         src/mbed_overrides.c
         src/ospi_api.c
         src/pinmap.c

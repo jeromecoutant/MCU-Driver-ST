@@ -1,7 +1,7 @@
 #include "crc_api.h"
 #include "device.h"
 
-#include "platform/mbed_assert.h"
+#include "mbed_assert.h"
 
 #if DEVICE_CRC
 
