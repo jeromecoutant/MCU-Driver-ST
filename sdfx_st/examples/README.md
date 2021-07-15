@@ -14,7 +14,7 @@ Each application can be built by doing the following:
 1. Change the current working directory to `MCU-Driver-ST/sdfx_st/examples/<INTERFACE>/` with `<INTERFACE>` being the example for the API you want to run, eg `gpio`.
 1. Run:
     ```
-    cmake -S . -B cmake_build -GNinja -DCMAKE_BUILD_TYPE=debug -DMBED_TOOLCHAIN=<TOOLCHAIN>
+    cmake -S . -B cmake_build -DCMAKE_BUILD_TYPE=debug -DMBED_TOOLCHAIN=<TOOLCHAIN>
     ```
     If you are using a non-default build system, and you have not set the environment variable, then you can append `-G<BuildSystem>` to the command above.
     Possible values for `<TOOLCHAIN>` are `ARM` and `GCC_ARM`. More on that [here.](https://github.com/MCU-Driver-HAL/MCU-Driver-HAL/blob/main/docs/user/README.md#Compiler)
