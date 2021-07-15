@@ -34,8 +34,3 @@ target_link_libraries(sdfx-st-test-crc
 )
 
 mbed_set_post_build(sdfx-st-test-crc)
-
-option(VERBOSE_BUILD "Have a verbose build process")
-if(VERBOSE_BUILD)
-    set(CMAKE_VERBOSE_MAKEFILE ON)
-endif()
