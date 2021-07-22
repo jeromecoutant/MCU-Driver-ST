@@ -11,7 +11,7 @@ target_include_directories(sdfx-hal-st
 target_sources(sdfx-hal-st
     INTERFACE
         # src/USBPhy_STM32.cpp
-        # src/analogin_api.c
+        src/analogin_api.c
         # src/analogout_api.c
         # src/can_api.c
         src/gpio_api.c

@@ -10,7 +10,7 @@ add_library(mbed-stm32l4 INTERFACE)
 
 target_sources(mbed-stm32l4
     INTERFACE
-        # analogin_device.c
+        analogin_device.c
         # analogout_device.c
         flash_api.c
         gpio_irq_device.c
