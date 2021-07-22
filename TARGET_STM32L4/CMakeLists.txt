@@ -13,7 +13,7 @@ target_sources(mbed-stm32l4
         # analogin_device.c
         # analogout_device.c
         flash_api.c
-        # gpio_irq_device.c
+        gpio_irq_device.c
         # i2c_device.c
         pwmout_device.c
         serial_device.c

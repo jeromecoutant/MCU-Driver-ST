@@ -15,7 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TESTS_BUILT=()
+# Usage: `./build_all.sh *gpio*`
+PATH_PATTERN='*'
+if [ -n "$1" ]; then
+    PATH_PATTERN=$1
+fi
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   ncpu=$(( $(sysctl -n hw.ncpu) - 1))
@@ -23,16 +27,18 @@ else
   ncpu=$(( $(nproc) - 1 ))
 fi
 
-for TEST_PATH in $(find ./ -type f -name CMakeLists.txt); do
+TESTS_BUILT=()
+
+for TEST_PATH in $(find ./ -type f -name CMakeLists.txt -path "$PATH_PATTERN"); do
     TEST_DIR_PATH=$(dirname "$TEST_PATH")
     printf 'Building %s\n' "$TEST_DIR_PATH"
     pushd "$TEST_DIR_PATH" || exit
     cmake \
         -S ./ \
         -B ./cmake_build \
-        -DGREENTEA_CLIENT_STDIO=OFF \
-        -DMBED_TOOLCHAIN=GCC_ARM \
-        -DCMAKE_BUILD_TYPE=develop \
+        -D GREENTEA_CLIENT_STDIO=OFF \
+        -D MBED_TOOLCHAIN=GCC_ARM \
+        -D CMAKE_BUILD_TYPE=develop \
         --log-level=ERROR \
         || exit
     cmake --build ./cmake_build -j $ncpu || exit

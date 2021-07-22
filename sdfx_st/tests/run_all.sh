@@ -17,7 +17,7 @@
 
 TESTS_RUN=()
 
-for TEST_BIN_PATH in $(find ./ -type f -name "sdfx-st-test-*.bin"); do
+for TEST_BIN_PATH in $(find ./ -type f -name "sdfx-st-*test*.bin"); do
     printf 'Running %s\n' "$TEST_BIN_PATH"
     mbedhtrun \
         --image-path="$TEST_BIN_PATH" \
