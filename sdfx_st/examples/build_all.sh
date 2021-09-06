@@ -24,6 +24,12 @@ else
   ncpu=$(( $(nproc) - 1 ))
 fi
 
+if [[ "$(uname -m)" == "x86_64" ]]; then
+  generator="-GNinja"
+else
+  generator=""
+fi
+
 for EXAMPLE_PATH in $(find ./ -type f -name CMakeLists.txt); do
     EXAMPLE_DIR_PATH=$(dirname "$EXAMPLE_PATH")
     printf 'Building %s\n' "$EXAMPLE_DIR_PATH"
@@ -33,6 +39,7 @@ for EXAMPLE_PATH in $(find ./ -type f -name CMakeLists.txt); do
         -B ./cmake_build \
         -DMBED_TOOLCHAIN=GCC_ARM \
         -DCMAKE_BUILD_TYPE=develop \
+        $generator \
         || exit
     cmake --build ./cmake_build -j $ncpu || exit
     popd || exit
@@ -41,3 +48,6 @@ done
 
 printf '\nBUILD SUMMARY:\n'
 printf '%s\n' "${EXAMPLES_BUILT[@]}"
+
+printf '\nBinaries:\n'
+find . -iname "sdfx*.bin"
